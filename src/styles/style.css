@@ -1,0 +1,36 @@
+#brackets-panels-hack.bottom-panel {
+    display: block;
+    height: 30px;
+}
+
+#brackets-panels-hack .toolbar.tabs-below > .nav-tabs {
+    border-top: none;
+}
+
+#brackets-panels-hack .toolbar {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#brackets-panels-hack .toolbar .nav-container .nav.nav-tabs {
+    border-bottom: none;
+    margin: 0;
+}
+
+#brackets-panels-hack .toolbar li {
+    width: 120px;
+}
+
+#brackets-panels-hack .toolbar li a {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#brackets-panels-hack .toolbar li a p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80px;
+    margin: 0;
+}

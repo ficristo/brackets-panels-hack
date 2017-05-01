@@ -1,0 +1,35 @@
+{
+  "name": "brackets-panels-hack",
+  "title": "Brackets Panels Hack",
+  "version": "0.0.0",
+  "description": "An hack to avoid to see stacked panels",
+  "main": "main.js",
+  "homepage": "https://github.com/ficristo/brackets-panels-hack",
+  "repository": "https://github.com/ficristo/brackets-panels-hack",
+  "keywords": [
+    "brackets",
+    "brackets-extension",
+    "panels",
+    "stacked panels",
+    "hack"
+  ],
+  "author": "ficristo",
+  "license": "MIT",
+  "engines": {
+    "brackets": "^1.9.0"
+  },
+  "scripts": {
+    "lint:js": "eslint . --ignore-path .gitignore",
+    "lint": "npm run lint:js",
+    "prepush": "npm run test",
+    "test": "npm run lint",
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "3.19.0",
+    "husky": "0.13.3"
+  }
+}

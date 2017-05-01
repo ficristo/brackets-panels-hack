@@ -1,0 +1,5 @@
+.DS_Store
+node_modules
+
+# Avoid to commit the "distribution"...
+brackets-panels-hack.*
