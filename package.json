@@ -1,7 +1,7 @@
 {
   "name": "brackets-panels-hack",
   "title": "Brackets Panels Hack",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An hack to avoid to see stacked panels",
   "main": "main.js",
   "homepage": "https://github.com/ficristo/brackets-panels-hack",
@@ -26,8 +26,7 @@
     "preversion": "npm run test",
     "postversion": "git push && git push --tags"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "3.19.0",
     "husky": "0.13.3"
