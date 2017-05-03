@@ -145,6 +145,28 @@
             }
         }
     }
+
+    .tabs-below {
+        .nav-tabs {
+            /* Colors for the active tab, remove top border */
+            > .active > a,
+            > .active > a:hover {
+                border-color: transparent @bc-btn-border @bc-btn-border @bc-btn-border;
+
+                .dark & {
+                    border-color: transparent @dark-bc-btn-border @dark-bc-btn-border @dark-bc-btn-border;
+                }
+            }
+
+            > .active > a:focus {
+                border-color: transparent @bc-btn-border-focused @bc-btn-border-focused @bc-btn-border-focused;
+
+                .dark & {
+                    border-color: transparent @dark-bc-btn-border-focused @dark-bc-btn-border-focused @dark-bc-btn-border-focused;
+                }
+            }
+        }
+    }
 }
 
 #brackets-panels-hack {
