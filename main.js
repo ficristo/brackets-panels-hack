@@ -22,7 +22,12 @@ define(function (require, exports, module) {
         });
     }
 
-    function hijack(panel, title) {
+    function hijack(panel, id) {
+        var $panel = panel.$panel;
+        var title = $panel.find(".toolbar.simple-toolbar-layout > .title").text();
+        if (!title) {
+            title = id.replace(/^brackets-|\.panel$/g, "");
+        }
         var header = Mustache.render(panelHeaderHtml, {
                 title: title
             }),
