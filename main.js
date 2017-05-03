@@ -29,6 +29,7 @@ define(function (require, exports, module) {
             title = id.replace(/^brackets-|\.panel$/g, "");
         }
         var header = Mustache.render(panelHeaderHtml, {
+                id: id,
                 title: title
             }),
             $header = $(header);
