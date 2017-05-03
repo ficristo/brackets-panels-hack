@@ -26,7 +26,6 @@
     "preversion": "npm run test",
     "postversion": "git push && git push --tags"
   },
-  "dependencies": {},
   "devDependencies": {
     "eslint": "3.19.0",
     "husky": "0.13.3"
