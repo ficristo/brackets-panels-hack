@@ -7,7 +7,8 @@ define(function (require, exports, module) {
         Mustache = brackets.getModule("thirdparty/mustache/mustache"),
         panelsContainerHtml = require("text!src/htmlContent/panels-container.html"),
         panelHeaderHtml = require("text!src/htmlContent/panel-header.html"),
-        PANEL_ID = "brackets-panels-hack";
+        PANEL_ID = "brackets-panels-hack",
+        ID_PREFIX = "tab-";
 
     var container = Mustache.render(panelsContainerHtml),
         $container = $(container);
@@ -66,17 +67,17 @@ define(function (require, exports, module) {
             hideAll();
             return codeHintShow.apply(null, arguments);
         });
-        hijack(codeHintPanel, "Code Hints", "tab-code-hints");
-        $("#status-inspection").insertBefore("#" + PANEL_ID + " #tab-code-hints > a > p");
+        hijack(codeHintPanel, "Code Hints", ID_PREFIX + "code-hints");
+        $("#status-inspection").insertBefore("#" + PANEL_ID + " #" + ID_PREFIX + "code-hints > a > p");
 
         var searchID = "find-in-files.results",
             searchPanel = WorkspaceManager.getPanelForID(searchID);
-        hijack(searchPanel, "Search", "tab-search");
+        hijack(searchPanel, "Search", ID_PREFIX + "search");
 
         var createBottomPanel = WorkspaceManager.createBottomPanel;
         WorkspaceManager.createBottomPanel = function (id, $panel, height) {
             var panel = createBottomPanel.apply(null, [id, $panel, undefined]);
-            hijack(panel, id, "tab-" + id);
+            hijack(panel, id, ID_PREFIX + id);
             return panel;
         };
     });
