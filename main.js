@@ -75,7 +75,7 @@ define(function (require, exports, module) {
 
         var createBottomPanel = WorkspaceManager.createBottomPanel;
         WorkspaceManager.createBottomPanel = function (id, $panel, height) {
-            var panel = createBottomPanel.apply(null, [id, $panel, 200]);
+            var panel = createBottomPanel.apply(null, [id, $panel, undefined]);
             hijack(panel, id, "tab-" + id);
             return panel;
         };
