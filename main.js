@@ -22,14 +22,15 @@ define(function (require, exports, module) {
         });
     }
 
-    function hijack(panel, id) {
+    function hijack(panel, panelId, tabId) {
         var $panel = panel.$panel;
         var title = $panel.find(".toolbar.simple-toolbar-layout > .title").text();
         if (!title) {
-            title = id.replace(/^brackets-|\.panel$/g, "");
+            title = panelId.replace(/^brackets-|\.panel$/g, "");
         }
         var header = Mustache.render(panelHeaderHtml, {
-                id: id,
+                tabId: tabId,
+                panelId: panelId,
                 title: title
             }),
             $header = $(header);
@@ -65,16 +66,17 @@ define(function (require, exports, module) {
             hideAll();
             return codeHintShow.apply(null, arguments);
         });
-        hijack(codeHintPanel, "Code Hints");
+        hijack(codeHintPanel, "Code Hints", "tab-code-hints");
+        $("#status-inspection").insertBefore("#" + PANEL_ID + " #tab-code-hints > a > p");
 
         var searchID = "find-in-files.results",
             searchPanel = WorkspaceManager.getPanelForID(searchID);
-        hijack(searchPanel, "Search");
+        hijack(searchPanel, "Search", "tab-search");
 
         var createBottomPanel = WorkspaceManager.createBottomPanel;
         WorkspaceManager.createBottomPanel = function (id, $panel, height) {
             var panel = createBottomPanel.apply(null, [id, $panel, 200]);
-            hijack(panel, id);
+            hijack(panel, id, "tab-" + id);
             return panel;
         };
     });

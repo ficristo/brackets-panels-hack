@@ -34,3 +34,17 @@
     width: 80px;
     margin: 0;
 }
+
+#status-inspection {
+    width: 20px;
+}
+
+#status-inspection.inspection-valid,
+#status-inspection.inspection-errors,
+#status-inspection.inspection-disabled {
+    background-position: 0px 2px;
+}
+
+#status-indicators #status-language {
+    border-right: 0;
+}
