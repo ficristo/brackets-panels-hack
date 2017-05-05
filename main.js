@@ -39,7 +39,14 @@ define(function (require, exports, module) {
         var panelShow = panel.show;
         panel.show = function () {
             hideAll();
+            $header.addClass("active");
             return panelShow.apply(panel, arguments);
+        };
+
+        var panelHide = panel.hide;
+        panel.hide = function () {
+            $header.removeClass("active");
+            return panelHide.apply(panel, arguments);
         };
 
         $header.find("a").on("click", function () {
@@ -62,10 +69,18 @@ define(function (require, exports, module) {
 
         var codeHintID = "errors",
             codeHintPanel = WorkspaceManager.getPanelForID(codeHintID),
-            codeHintShow = $("#problems-panel").data("show");
+            codeHintShow = $("#problems-panel").data("show"),
+            codeHintHide = $("#problems-panel").data("hide");
         $("#problems-panel").data("show", function () {
             hideAll();
+            var $header = $container.find(".nav-tabs #" + ID_PREFIX + "code-hints");
+            $header.addClass("active");
             return codeHintShow.apply(null, arguments);
+        });
+        $("#problems-panel").data("hide", function () {
+            var $header = $container.find(".nav-tabs #" + ID_PREFIX + "code-hints");
+            $header.removeClass("active");
+            return codeHintHide.apply(null, arguments);
         });
         hijack(codeHintPanel, "Code Hints", ID_PREFIX + "code-hints");
         $("#status-inspection").insertBefore("#" + PANEL_ID + " #" + ID_PREFIX + "code-hints > a > p");
