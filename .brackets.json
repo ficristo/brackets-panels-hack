@@ -10,8 +10,7 @@
     },
     "path": {
         "package.json": {
-            "spaceUnits": 2,
-            "brackets-terminal-x.collapsed": false
+            "spaceUnits": 2
         }
     },
     "spaceUnits": 4,
