@@ -8,3 +8,8 @@ An hack to avoid to see stacked panels.
 ## How to install
 
 It is available in the Extension Manager.
+
+
+## Screnshot
+
+![Panels grouped in the tab bar](screenshots/panels.png)
