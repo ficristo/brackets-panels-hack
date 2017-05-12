@@ -27,7 +27,8 @@ define(function (require, exports, module) {
         var $panel = panel.$panel;
         var title = $panel.find(".toolbar.simple-toolbar-layout > .title").text();
         if (!title) {
-            title = panelId.replace(/^brackets-|\.panel$/g, "");
+            title = panelId.replace(/(?:brackets\W?)|\Wpanel$/g, "");
+            title = title.substring(title.lastIndexOf(".") + 1);
         }
         var header = Mustache.render(panelHeaderHtml, {
                 tabId: tabId,
