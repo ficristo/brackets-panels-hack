@@ -97,4 +97,35 @@ define(function (require, exports, module) {
             return panel;
         };
     });
+
+    var iconCSS = {
+        width: "24px",
+        height: "18px",
+        display: "block",
+        padding: 0,
+        "mix-blend-mode": "difference",
+        "background-position": "-3px -3px"
+    };
+
+    function tryMoveIcon(panelId, iconId) {
+        var icon = $("#main-toolbar .buttons #" + iconId);
+        if (!icon || !icon.length) {
+            return false;
+        }
+
+        icon.css(iconCSS);
+        icon.insertBefore("#" + PANEL_ID + " #" + ID_PREFIX + panelId + " > a > p");
+        return true;
+    }
+
+    AppInit.appReady(function () {
+        var ids = WorkspaceManager.getAllPanelIDs();
+        ids.forEach(function (panelId) {
+            var iconId = panelId + "-icon";
+            if (!tryMoveIcon(panelId, iconId)) {
+                var iconId = panelId.replace(/panel$/, "icon");
+                tryMoveIcon(panelId, iconId);
+            }
+        });
+    });
 });
