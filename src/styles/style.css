@@ -35,6 +35,10 @@
     margin: 0;
 }
 
+#brackets-panels-hack .toolbar li a p::first-letter {
+    text-transform: uppercase;
+}
+
 #status-inspection {
     width: 20px;
 }
