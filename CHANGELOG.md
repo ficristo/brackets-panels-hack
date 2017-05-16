@@ -1,3 +1,12 @@
+## v0.4.0 (2017-05-16)
+
+Changed the heuristic to retrieve the title.
+
+Try to move extension icons from the main toolbar into the tabbar.
+
+Add a note for Usage by other extensions.
+
+
 ## v0.3.0 (2017-05-06)
 
 Move the code hints icon in the tabbar.
