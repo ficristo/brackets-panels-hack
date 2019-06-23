@@ -5,6 +5,8 @@ An hack to avoid to see stacked panels.
 **NOTE:** this extension works by overwriting some Brackets functions.
 There are good chances something will not work as you would expect.
 
+![Panels grouped in the tab bar](screenshots/panels.png)
+
 
 ## How to install
 
@@ -27,8 +29,3 @@ It does that by looking for an icon with these id:
 `brackets-foo.panel --> brackets-foo.panel-icon`
 - if the id terminates with `panel` replaces it with `icon`<br />
 `brackets-foo.panel --> brackets-foo.icon`
-
-
-## Screnshot
-
-![Panels grouped in the tab bar](screenshots/panels.png)
